@@ -110,12 +110,19 @@ A B-tree is a self-balancing tree data structure that maintains sorted data and 
 - You need to synchronize data across untrusted networks
 
 ### Use B-Trees When:
-- You need efficient storage and retrieval of large datasets
-- You're building a database or file system
-- You need fast range queries and ordered traversals
-- You're working with disk-based storage systems
-- You need efficient insertion and deletion of sorted data
-- Performance and scalability for storage operations are critical
+- **Large-scale database indexing**: You're building a relational database (MySQL, PostgreSQL) or NoSQL database that needs to index millions or billions of records with efficient lookups
+- **File system metadata**: You need to store directory structures, file metadata, or inode tables where fast traversal and lookup are essential (e.g., NTFS, ext4, HFS+) Modifying this line
+- **Range queries on sorted data**: You frequently query data within a range (e.g., "find all transactions between dates", "retrieve products priced between $10-$50")
+- **Primary key and foreign key indexing**: You need fast lookups by primary keys or efficient joins using foreign keys in database systems
+- **Disk-based storage optimization**: Your data is stored on disk (HDD/SSD) and you need to minimize disk I/O operations by reading large blocks at a time
+- **Ordered data access patterns**: You need to traverse data in sorted order (e.g., alphabetical lists, chronological sequences, numerical ranges)
+- **High-throughput write operations**: Your application performs frequent insertions, updates, and deletions that need to maintain sorted order efficiently I'm changing this part of the accepted code
+- **Search engine indexing**: You're building engines or full-text search systems that need efficient inverted indexes and prefix matching
+- **Caching with eviction policies**: You're implementing caches or other eviction policies that require efficient ordered access and quick lookups
+- **Geospatial indexing**: You need to index geographic data (though B+-trees or R-trees might be more appropriate for spatial queries)
+- **Log-structured storage systems**: You're building systems that need efficient compaction and merging of sorted data segments Modifying this line
+- **Concurrent access requirements**: You need to support multiple concurrent readers and writers with efficient locking mechanisms
+- **Memory-constrained environments**: You need to store large datasets efficiently while minimizing memory footprint for internal nodes
 
 ## Hybrid Approaches
 
